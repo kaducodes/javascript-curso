@@ -1,24 +1,29 @@
 function adicionarTarefa() {
     //declarada variável pegando o input lá no html
-    let inputTarefa = document.getElementById("inputTarefa")
+    const inputTarefa = document.getElementById("inputTarefa")
     //declara variável que pega o valor inserido no input
-    let tarefa = inputTarefa.value 
+    const tarefa = inputTarefa.value.trim()
+    //declara variável que pega a mensagem 
+    const mensagem = document.getElementById("mensagem")
 
     if (tarefa == "") {
-        let mensagem = "Você não adicionou nenhuma Tarefa!";
-        document.getElementById("mensagem").textContent = mensagem;
+        let mensagemErro = "Você não adicionou nenhuma Tarefa!";
+        mensagem.textContent = mensagemErro;
+        mensagem.classList.remove("sucesso");
+        mensagem.classList.add("erro");
     } else {
         //declara variável com um texto dentro
-        let mensagem = "Tarefa adicionada com sucesso!";
-
+        let mensagemSucesso = "Tarefa adicionada com sucesso!";
         
         //muda o valor do elemento com esse id para a variável
-        document.getElementById("mensagem").textContent = mensagem;
+        mensagem.textContent = mensagemSucesso;
+        mensagem.classList.remove("erro");
+        mensagem.classList.add("sucesso");
 
         //declara variável pegando a lista no html
-        let listaTarefas = document.getElementById("listaTarefas")
+        const listaTarefas = document.getElementById("listaTarefas")
         //declara variável criando novos elementos de lista no html
-        let novaTarefa = document.createElement("li")
+        const novaTarefa = document.createElement("li")
 
         //muda o texto dentro dos novos elementos de lista inserindo o valor inserido no input
         novaTarefa.textContent = tarefa
