@@ -8,3 +8,10 @@
         trim() = retira os espaços no começo e no fim do input
 01/03
     parte 4 - arrays (listas), estruturas de repetição (for) e escopo
+    .push() = adicionar itens na lista
+02/03
+    parte 5 - métodos de array (deletando e editando itens em lista)
+        .splice(indice, número de itens que deseja remover) = indica o índice relativo ao item que deseja deletar
+        prompt() = função que faz aparecer uma nova caixa de input no site
+        .length = 0 = deleta todos os items da lista
+

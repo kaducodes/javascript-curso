@@ -47,13 +47,58 @@ function renderizarTarefas() {
     //3. se vai em 1 em 1, 2 em 2... (frequência)
     // for (iterador, condição, frequência)
     //cria variável do iterador com 0 que é o primeiro elemento da lista
-    let i = 0
-    for (i; i < tarefas.length; i++){
+    for (let i = 0; i < tarefas.length; i++){
         //declara variável criando novos elementos de lista no html
         let novaTarefa = document.createElement("li")
         //insere o valor inserido no input na lista e o texto contido no li
         novaTarefa.textContent = tarefas[i]
+
+        //adiciona os botões no html
+        let botaoRemover = document.createElement("button")
+        botaoRemover.className = "remover"
+        botaoRemover.textContent = "Remover"
+        botaoRemover.onclick = () => removerTarefa(i)
+
+        let botaoEditar = document.createElement("button")
+        botaoEditar.className = "editar"
+        botaoEditar.textContent = "Editar"
+        botaoEditar.onclick = () => editarTarefa(i)
+
+        novaTarefa.appendChild(botaoRemover)
+        novaTarefa.appendChild(botaoEditar)
+
         //adiciona esse novo elemento na lista do html
         listaTarefas.appendChild(novaTarefa)
-    }   
+    }
+    
+    //se o botão de "limpar lista" não existir, criar
+    if (!document.getElementById("botaoLimpar")) {
+        //criando botão de limpar assim que adiciona um item
+        let botaoLimpar = document.createElement("button");
+        botaoLimpar.id = "botaoLimpar";
+        botaoLimpar.className = "botao_lista";
+        botaoLimpar.textContent = "Limpar Lista";
+        botaoLimpar.onclick = limparLista;
+
+        container.appendChild(botaoLimpar);
+    }
+}
+
+function removerTarefa(i) {
+    tarefas.splice(i, 1)
+    renderizarTarefas()
+}
+
+function editarTarefa(i) {
+    let tarefaEditada = prompt("Edite a Tarefa: ")
+    if (tarefaEditada.trim() !== "") {
+        tarefas[i] = tarefaEditada
+        renderizarTarefas()
+    }
+}
+
+function limparLista() {
+    tarefas.length = 0
+    renderizarTarefas()
+    mensagem.textContent = "Lista de Tarefas limpa com sucesso!"
 }
