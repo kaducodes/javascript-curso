@@ -14,4 +14,9 @@
         .splice(indice, número de itens que deseja remover) = indica o índice relativo ao item que deseja deletar
         prompt() = função que faz aparecer uma nova caixa de input no site
         .length = 0 = deleta todos os items da lista
+03/03
+    DIA 1 | Resolvendo 7 Days of Code de JavaScript | variáveis, if e else, == e === e tipagem
+        = : atribuir valor de variável
+        == : comparações de variáveis dentro de condicionais
+        === : comparação de valor e tipo de variáveis
 
