@@ -19,4 +19,6 @@
         = : atribuir valor de variável
         == : comparações de variáveis dentro de condicionais
         === : comparação de valor e tipo de variáveis
-
+    DIA 2 | 7 Days of Code de JavaScript | input e alert
+        alert(): aparece uma caixa de mensagem apenas com uma mensagem
+        prompt(): aparece uma caixa de mensagem para o usuário dar input
